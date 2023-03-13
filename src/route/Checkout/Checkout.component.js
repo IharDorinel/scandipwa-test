@@ -37,7 +37,7 @@ import {
 } from './Checkout.config';
 
 import './Checkout.style';
-import ProgressBarComponent from 'Src/ProgressBar/ProgressBar.component';
+import ProgressBarComponent from 'Src/component/ProgressBar/ProgressBar.component';
 
 /** @namespace Route/Checkout/Component */
 export class Checkout extends PureComponent {
@@ -77,6 +77,19 @@ export class Checkout extends PureComponent {
         isMobile: PropTypes.bool.isRequired,
         onCouponCodeUpdate: PropTypes.func.isRequired,
     };
+
+    state = {
+        isShippingActive: false,
+        isOrderActive: false,
+    }
+
+    setShippingActive = (isShippingActive) => {
+        this.setState({isShippingActive})
+    }
+
+    setOrderActive = (isOrderActive) => {
+        this.setState({isOrderActive})
+    }
 
     static defaultProps = {
         paymentTotals: {},
@@ -154,7 +167,7 @@ export class Checkout extends PureComponent {
 
     renderProgressBar() {
         return (
-            <ProgressBarComponent/>
+            <ProgressBarComponent isShippingActive={this.state.isShippingActive} isOrderActive={this.state.isOrderActive}/>
         );
     }
 
@@ -216,6 +229,7 @@ export class Checkout extends PureComponent {
                 onEmailChange={onEmailChange}
                 isCreateUser={isCreateUser}
                 estimateAddress={estimateAddress}
+                setActive={this.setShippingActive}
             />
         );
     }
@@ -238,6 +252,7 @@ export class Checkout extends PureComponent {
                 shippingAddress={shippingAddress}
                 savePaymentInformation={savePaymentInformation}
                 selectedShippingMethod={selectedShippingMethod}
+                setActive={this.setOrderActive}
             />
         );
     }

@@ -1,0 +1,96 @@
+.ProgressBarComponent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: var(--breadcrumbs-background);
+  padding-top: 20px;
+
+  .Active-Color {
+    background-color: var(--checkout-address-selected-color);
+  }
+
+  .Active-Color-Animation {
+    animation: smoothFill 2s ease;
+    animation-fill-mode: forwards;
+  }
+
+  .Inactive-Color {
+    background-color: #b4b3b3;
+  }
+
+
+  .Line {
+    height: 3px;
+    margin-top: 7px;
+  }
+
+  .First-Line {
+    width: 40%;
+    min-width: 300px;
+  }
+
+  .Second-Line {
+    width: 40%;
+    min-width: 250px;
+  }
+
+  .Third-Line {
+    width: 35%;
+    min-width: 300px;
+  }
+
+  .Step-Cont-First {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: -100px;
+    padding-right: -100px;
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  .Step-Cont-Second {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: -100px;
+    padding-right: -100px;
+    margin-left: -50px;
+    margin-right: -50px;
+
+  }
+    .Active-Circle {
+      color: white;
+      background-color: var(--checkout-address-selected-color);
+      border-radius: 50%;
+      padding: 4px 6px;
+    }
+
+    .Inactive-Circle {
+      color: black;
+      background-color: #b4b3b3;
+      border-radius: 50%;
+      padding: 4px 6px;
+    }
+
+    .Inactive-Text {
+      color: #b4b3b3;
+      min-width: 130px;
+    }
+
+  .Active-Text {
+    color: black;
+    min-width: 130px;
+  }
+
+}
+
+@keyframes smoothFill {
+
+  100% {
+    background-color: var(--checkout-address-selected-color);
+  }
+
+}

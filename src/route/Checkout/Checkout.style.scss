@@ -25,15 +25,6 @@
     padding-top: 2rem;
   }
 
-  //&::before {
-  //  @include after-mobile {
-  //    content: '';
-  //    background: var(--breadcrumbs-background);
-  //    min-height: var(--breadcrumbs-height);
-  //    display: block;
-  //  }
-  //}
-
   &-StickyButtonWrapper {
     @include before-desktop {
       border-top: 1px solid var(--primary-divider-color);
